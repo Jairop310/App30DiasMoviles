@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Liverpool</string>
+    <string name="hardware_coffee_kitchen">Hardware Coffee + Kitchen</string>
+    <string name="cafeter_a_moderna_que_ofrece_una_variedad_de_caf_s_especiales_y_opciones_de_desayuno">Cafetería moderna que ofrece una variedad de cafés especiales y opciones de desayuno.</string>
+    <string name="cafeter_as">Cafeterías</string>
+    <string name="heavenly_desserts_liverpool">Heavenly Desserts Liverpool</string>
+    <string name="bold_street_coffee">Bold Street Coffee</string>
+    <string name="rococo_coffee_house">Rococo Coffee House</string>
+    <string name="_92_degrees_coffee">92 Degrees Coffee</string>
+    <string name="especializada_en_postres_gourmet_y_una_amplia_selecci_n_de_bebidas_calientes">Especializada en postres gourmet y una amplia selección de bebidas calientes.</string>
+    <string name="a1">Conocida por su excelente café y ambiente acogedor en el corazón de Liverpool.</string>
+    <string name="vsdv">Cafetería independiente con una atmósfera única y una selección de pasteles caseros.</string>
+    <string name="dfsdfdsfsd">Tostador y cafetería local que ofrece granos de café de origen único y un ambiente relajado.</string>
 </resources>
