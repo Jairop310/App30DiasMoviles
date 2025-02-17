@@ -15,7 +15,7 @@ fun AppNavegacion() {
     NavHost(navController = navController, startDestination = "${Router.PrimeraVista.route}/{param0}") {
         composable(route = "${Router.PrimeraVista.route}/{param0}") { backStackEntry ->
             val param0 = backStackEntry.arguments?.getString("param0")
-            VistaCategorias(navController, param0)
+            VistaCategorias(navController)
         }
         composable(route = "${Router.SegundaVista.route}/{param1}") { backStackEntry ->
             val param1 = backStackEntry.arguments?.getString("param1")

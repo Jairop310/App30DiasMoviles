@@ -21,8 +21,11 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.liverpool.Clases.Categoria
+import com.example.liverpool.Clases.Recomendacion
 import com.example.liverpool.Navegacion.Router
 
 
@@ -30,6 +33,7 @@ import com.example.liverpool.Navegacion.Router
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun VistaRecomendaciones(navController: NavController, param1: String? ) {
+    val categories = Controlador().obtenerCategorias()
     Scaffold(topBar = {
         TopAppBar(
             title = {
@@ -49,7 +53,15 @@ fun VistaRecomendaciones(navController: NavController, param1: String? ) {
         )
     },
         content = {
-            BodyRec(navController)
+            val category = categories.find { stringResource(id = it.nombre) == param1 }
+            if (category != null) {
+                val listrec = category.listaRecomendaciones;
+                listrec.forEach { recomendacion ->
+                    BodyRec(recomendacion, navController)
+                }
+            } else {
+                navController.popBackStack()
+            }
         }
     )
 
@@ -57,7 +69,8 @@ fun VistaRecomendaciones(navController: NavController, param1: String? ) {
 }
 
 @Composable
-fun BodyRec(navController: NavController) {
+fun BodyRec(recomend: Recomendacion, navController: NavController) {
+    val name = stringResource(id = recomend.nombre)
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -65,9 +78,10 @@ fun BodyRec(navController: NavController) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+
             Text("Recomendaciones")
             Button(onClick = {
-                navController.navigate(route = Router.TerceraVista.route)
+                navController.navigate("${Router.TerceraVista.route}/name")
             }) {
                 Text("Hola")
             }

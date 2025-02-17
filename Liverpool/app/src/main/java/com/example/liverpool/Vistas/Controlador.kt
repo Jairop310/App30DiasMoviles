@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 class Controlador : ViewModel()
 {
-    private val _categories = MutableStateFlow(
+    public val _categories =
         listOf(
             Categoria(R.string.cafeter_as, listOf(
                 Recomendacion(R.string.hardware_coffee_kitchen, R.string.cafeter_a_moderna_que_ofrece_una_variedad_de_caf_s_especiales_y_opciones_de_desayuno, R.drawable.hardwarecofe),
@@ -51,7 +51,9 @@ class Controlador : ViewModel()
 //                Recomendacion("New Brighton Beach", "Playa familiar con un paseo marítimo vibrante, atracciones y vistas al estuario del Mersey.", "a")
 //            )),
         )
-    )
-    val categories: StateFlow<List<Categoria>> = _categories;
+
+    fun obtenerCategorias(): List<Categoria> {
+        return _categories;
+    }
 
 }

@@ -61,7 +61,7 @@ fun BodySitio(navController: NavController){
         ) {
             Text("Sitio especifico")
             Button(onClick = {
-                navController.navigate(route = Router.PrimeraVista.route)
+                navController.navigate("${Router.TerceraVista.route}/name")
             }) {
                 Text("Volver al inicio")
             }

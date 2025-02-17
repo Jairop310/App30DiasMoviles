@@ -1,6 +1,7 @@
 package com.example.liverpool.Vistas
 
 import android.annotation.SuppressLint
+import android.service.controls.Control
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -29,15 +30,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.liverpool.Clases.Categoria
 import com.example.liverpool.Navegacion.AppNavegacion
 import com.example.liverpool.Navegacion.Router
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun VistaCategorias(navController: NavController, param0: String?){
+fun VistaCategorias(navController: NavController){
 
         BodyCat(navController)
 
@@ -84,7 +87,7 @@ fun BodyCat(navController: NavController) {
 
 @Composable
 fun Main(name: String, modifier: Modifier = Modifier, navController: NavController) {
-    val categories = listOf("Category 1", "Category 2", "Category 3", "Category 4")
+    val categories = Controlador().obtenerCategorias();
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Text(
             text = "Categorias",
@@ -99,7 +102,7 @@ fun Main(name: String, modifier: Modifier = Modifier, navController: NavControll
 }
 
 @Composable
-fun CategoryItem(name: String, navController: NavController) {
+fun CategoryItem(categoria: Categoria, navController: NavController) {
     Card(
         shape = RoundedCornerShape(8.dp),
         modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
@@ -114,9 +117,9 @@ fun CategoryItem(name: String, navController: NavController) {
             )
             Spacer(modifier = Modifier.width(16.dp))
             Button(onClick = {
-                navController.navigate(route = Router.SegundaVista.route)
+                navController.navigate("${Router.SegundaVista.route}/Cafeterias")
              }) {
-                Text(name)
+                Text(stringResource(id = categoria.nombre))
             }
         }
     }
