@@ -30,19 +30,20 @@ class Controlador : ViewModel()
                 Recomendacion(R.string.the_art_school_restaurant, R.string.mmmm, R.drawable.the_art_school_restaurant),
                 Recomendacion(R.string.mowgli_street_food, R.string.nnnn, R.drawable.mowgli_street_food),
                 Recomendacion(R.string.the_london_carriage_works, R.string.kkk, R.drawable.the_london_carriage_works)
+            )) ,Categoria(
+                    R.string.lugares_emblem_ticos, R.drawable.lugares_emblematicos, listOf(
+                Recomendacion(R.string.the_beatles_story, R.string.museo_dedicado_a_la_historia_de_the_beatles_una_visita_obligada_para_los_fan_ticos_de_la_música, R.drawable.the_beatles_story_entrance),
+                Recomendacion(R.string.royal_albert_dock, R.string.historico_muelle_que_alberga_tiendas_restaurantes_y_museos_incluyendo_el_tate_liverpool, R.drawable.royal_albert_dock_2023),
+                Recomendacion(R.string.catedral_de_liverpool, R.string.imponente_catedral_anglicana_conocida_por_su_arquitectura_y_vistas_panoramicas_de_la_ciudad, R.drawable.liverpool_anglican_cathedral_sep2012__7916053494_),
+                Recomendacion(R.string.st_george_s_hall, R.string.edificio_neoclasico_que_alberga_conciertos_y_eventos_culturales_famoso_por_su_impresionante_arquitectura, R.drawable.st_george_s_hall_concert_room_liverpool_opera_lirica),
+                Recomendacion(R.string.museo_de_liverpool, R.string.ofrece_exhibiciones_sobre_la_rica_historia_y_cultura_de_la_ciudad, R.drawable._310757883_dsc_7440)
+            )
+        ),
+            Categoria(R.string.deportes,R.drawable.anfield, listOf(
+                Recomendacion(R.string.anfield_stadium, R.string.anfield_description, R.drawable.panorama_of_anfield_with_new_main_stand__29676137824_),
+                Recomendacion(R.string.liverpool_tennis_centre, R.string.liverpool_tennis_description, R.drawable.outdoor_courts),
+                Recomendacion(R.string.royal_liverpool_golf_club, R.string.royal_liverpool_description, R.drawable.royal_liverpool_14th_0202_web_jpg_bc15edbf1f0c51714c32cc575a253f56)
             ))
-//            Categoria("Lugares Emblemáticos", listOf(
-//                Recomendacion("The Beatles Story", "Museo dedicado a la historia de The Beatles, una visita obligada para los fanáticos de la música.", "https://www.beatlesstory.com/"),
-//                Recomendacion("Royal Albert Dock", "Histórico muelle que alberga tiendas, restaurantes y museos, incluyendo el Tate Liverpool.", "https://www.albertdock.com/"),
-//                Recomendacion("Catedral de Liverpool", "Imponente catedral anglicana conocida por su arquitectura y vistas panorámicas de la ciudad.", "https://www.liverpoolcathedral.org.uk/"),
-//                Recomendacion("St. George's Hall", "Edificio neoclásico que alberga conciertos y eventos culturales, famoso por su impresionante arquitectura.", "https://www.stgeorgeshallliverpool.co.uk/"),
-//                Recomendacion("Museo de Liverpool", "Ofrece exhibiciones sobre la rica historia y cultura de la ciudad.", "a")
-//            )),
-//            Categoria("Deportes", listOf(
-//                Recomendacion("Anfield Stadium", "Estadio icónico y hogar del Liverpool FC, conocido por su apasionada afición y rica historia en el fútbol.", "a"),
-//                Recomendacion("Liverpool Tennis Centre", "Parte del Wavertree Sports Park, cuenta con seis pistas de tenis cubiertas y seis al aire libre, y ha sido sede de importantes torneos.", "a"),
-//                Recomendacion("Royal Liverpool Golf Club", "Uno de los clubes de golf más antiguos de Inglaterra, ha sido sede del Open Championship en numerosas ocasiones.", "a")
-//            ))
         )
 
     fun obtenerCategorias(): List<Categoria> {

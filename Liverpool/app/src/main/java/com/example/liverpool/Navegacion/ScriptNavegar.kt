@@ -21,9 +21,10 @@ fun AppNavegacion() {
             val param1 = backStackEntry.arguments?.getString("param1")
             VistaRecomendaciones(navController, param1)
         }
-        composable(route = "${Router.TerceraVista.route}/{param2}") { backStackEntry ->
+        composable(route = "${Router.TerceraVista.route}/{param2}/{param3}") { backStackEntry ->
             val param2 = backStackEntry.arguments?.getString("param2")
-            VistaSitioEspecifico(navController, param2)
+            val param3 = backStackEntry.arguments?.getString("param3")
+            VistaSitioEspecifico(navController, param2, param3)
         }
     }
 }

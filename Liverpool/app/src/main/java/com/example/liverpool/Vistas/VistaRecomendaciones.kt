@@ -89,7 +89,7 @@ fun VistaRecomendaciones(navController: NavController, param1: String? ) {
                         .padding(16.dp)
                 ) {
                     items(listrec) { recomendacion ->
-                        BodyRec(recomendacion, navController,screenWidth)
+                        BodyRec(recomendacion, category,  navController,screenWidth)
                     }
                 }
             } else {
@@ -100,14 +100,15 @@ fun VistaRecomendaciones(navController: NavController, param1: String? ) {
 }
 
 @Composable
-fun BodyRec(recomend: Recomendacion, navController: NavController,screenWidth: androidx.compose.ui.unit.Dp) {
+fun BodyRec(recomend: Recomendacion,category: Categoria ,navController: NavController,screenWidth: androidx.compose.ui.unit.Dp) {
     val name = stringResource(id = recomend.nombre)
+    val nameCategoria = stringResource(id = category.nombre)
     Card(
         shape = RoundedCornerShape(12.dp),
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 8.dp)
-            .clickable { navController.navigate("${Router.TerceraVista.route}/$name") },
+            .clickable { navController.navigate("${Router.TerceraVista.route}/$nameCategoria/$name") },
         colors = CardDefaults.cardColors(containerColor = Color(0xFFF5F5F5))
     ) {
         Row(
@@ -138,7 +139,7 @@ fun BodyRec(recomend: Recomendacion, navController: NavController,screenWidth: a
                 modifier = Modifier
                     .size(screenWidth * 0.07f)
                     .clickable {
-                        navController.navigate("${Router.TerceraVista.route}/$name")
+                        navController.navigate("${Router.TerceraVista.route}/$nameCategoria/$name")
                     }
             )
         }
