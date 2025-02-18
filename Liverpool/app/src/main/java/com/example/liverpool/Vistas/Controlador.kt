@@ -11,7 +11,7 @@ class Controlador : ViewModel()
 {
     public val _categories =
         listOf(
-            Categoria(R.string.cafeter_as, listOf(
+            Categoria(R.string.cafeter_as,R.drawable.como_decorar_una_cafeteria_pequena_con_poco_dinero, listOf(
                 Recomendacion(R.string.hardware_coffee_kitchen, R.string.cafeter_a_moderna_que_ofrece_una_variedad_de_caf_s_especiales_y_opciones_de_desayuno, R.drawable.hardwarecofe),
                 Recomendacion(R.string.heavenly_desserts_liverpool, R.string.especializada_en_postres_gourmet_y_una_amplia_selecci_n_de_bebidas_calientes, R.drawable.heavenly),
                 Recomendacion(R.string.bold_street_coffee, R.string.a1, R.drawable.boldstreet),

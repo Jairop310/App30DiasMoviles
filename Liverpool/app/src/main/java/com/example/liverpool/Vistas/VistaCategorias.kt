@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -95,7 +97,15 @@ fun Main(name: String, modifier: Modifier = Modifier, navController: NavControll
             color = Color.Black,
             modifier = Modifier.padding(bottom = 16.dp)
         )
-        categories.forEach { category ->
+        CategoryList(navController)
+    }
+}
+
+@Composable
+fun CategoryList(navController: NavController) {
+    val categories = Controlador().obtenerCategorias();
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
+        items(categories) { category ->
             CategoryItem(category, navController)
         }
     }
@@ -103,24 +113,28 @@ fun Main(name: String, modifier: Modifier = Modifier, navController: NavControll
 
 @Composable
 fun CategoryItem(categoria: Categoria, navController: NavController) {
+    val NombreCategotia = stringResource(id = categoria.nombre)
     Card(
-        shape = RoundedCornerShape(8.dp),
-        modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White)
+        shape = RoundedCornerShape(12.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+            .clickable { navController.navigate("${Router.SegundaVista.route}/${NombreCategotia}") },
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFF5F5F5))
     ) {
-        Row(modifier = Modifier.padding(8.dp)) {
+        Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
             Image(
-                painter = painterResource(id = android.R.drawable.ic_menu_gallery),
+                painter = painterResource(id = categoria.imagen),
                 contentDescription = "Category Image",
                 modifier = Modifier.size(50.dp),
                 contentScale = ContentScale.Crop
             )
             Spacer(modifier = Modifier.width(16.dp))
-            Button(onClick = {
-                navController.navigate("${Router.SegundaVista.route}/Cafeterias")
-             }) {
-                Text(stringResource(id = categoria.nombre))
-            }
+            Text(
+                text = NombreCategotia,
+                fontSize = 18.sp,
+                color = Color.Black
+            )
         }
     }
 }
