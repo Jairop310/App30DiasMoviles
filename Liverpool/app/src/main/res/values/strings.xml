@@ -33,4 +33,9 @@
     <string name="mmmm">Restaurante de alta cocina que destaca por su menú innovador y elegante ambiente.</string>
     <string name="nnnn">Conocido por su auténtica comida callejera india y ambiente acogedor.</string>
     <string name="kkk">Restaurante galardonado que ofrece cocina británica moderna con ingredientes locales.</string>
+    <string name="recomendaciones">Recomendaciones</string>
+    <string name="recommendation_image">Recommendation Image</string>
+    <string name="volver">Volver</string>
+    <string name="ir_a_detalle">Ir a detalle</string>
+    <string name="category_image">Category Image</string>
 </resources>

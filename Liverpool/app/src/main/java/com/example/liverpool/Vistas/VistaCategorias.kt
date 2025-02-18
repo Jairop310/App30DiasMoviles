@@ -41,6 +41,7 @@ import androidx.navigation.NavController
 import com.example.liverpool.Clases.Categoria
 import com.example.liverpool.Navegacion.AppNavegacion
 import com.example.liverpool.Navegacion.Router
+import com.example.liverpool.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -77,7 +78,10 @@ fun BodyCat(navController: NavController) {
         },
         containerColor = Color(0xFFFFEBEE),
         content = { paddingValues ->
-            Column(modifier = Modifier.padding(paddingValues).padding(16.dp).fillMaxSize()) {
+            Column(modifier = Modifier
+                .padding(paddingValues)
+                .padding(16.dp)
+                .fillMaxSize()) {
                 Main(Modifier ,navController,screenWidth, screenHeight)
             }
         }
@@ -87,7 +91,9 @@ fun BodyCat(navController: NavController) {
 @Composable
 fun Main(modifier: Modifier = Modifier, navController: NavController,screenWidth: androidx.compose.ui.unit.Dp, screenHeight: androidx.compose.ui.unit.Dp) {
     val categories = Controlador().obtenerCategorias();
-    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .padding(16.dp)) {
         Text(
             text = "Categorias",
             fontSize = (screenWidth.value * 0.05f).sp,
@@ -102,7 +108,9 @@ fun Main(modifier: Modifier = Modifier, navController: NavController,screenWidth
 @Composable
 fun CategoryList(navController: NavController,screenWidth: androidx.compose.ui.unit.Dp,screenHeight: androidx.compose.ui.unit.Dp) {
     val categories = Controlador().obtenerCategorias();
-    LazyColumn(modifier = Modifier.fillMaxSize().padding(horizontal = screenWidth * 0.05f)) {
+    LazyColumn(modifier = Modifier
+        .fillMaxSize()
+        .padding(horizontal = screenWidth * 0.05f)) {
         items(categories) { category ->
             CategoryItem(category, navController,screenWidth)
         }
@@ -128,7 +136,7 @@ fun CategoryItem(categoria: Categoria, navController: NavController,screenWidth:
         ) {
             Image(
                 painter = painterResource(id = categoria.imagen),
-                contentDescription = "Category Image",
+                contentDescription = stringResource(R.string.category_image),
                 modifier = Modifier.size(screenWidth * 0.15f),
                 contentScale = ContentScale.Crop
             )
