@@ -26,11 +26,13 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -53,6 +55,9 @@ fun VistaCategorias(navController: NavController){
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BodyCat(navController: NavController) {
+    val configuration = LocalConfiguration.current
+    val screenWidth = configuration.screenWidthDp.dp
+    val screenHeight = configuration.screenHeightDp.dp
     Scaffold(
         topBar = {
             TopAppBar(
@@ -61,58 +66,51 @@ fun BodyCat(navController: NavController) {
                         modifier = Modifier.fillMaxWidth(),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("LIVERPOOL")
+                        Text("LIVERPOOL",
+                            fontSize = (screenWidth.value * 0.05f).sp,
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            color = Color.White)
                     }
-                }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFFB71C1C))
             )
         },
+        containerColor = Color(0xFFFFEBEE),
         content = { paddingValues ->
-            Column(modifier = Modifier.padding(paddingValues).padding(16.dp)) {
-                Main("Category 1", Modifier ,navController)
+            Column(modifier = Modifier.padding(paddingValues).padding(16.dp).fillMaxSize()) {
+                Main(Modifier ,navController,screenWidth, screenHeight)
             }
         }
     )
 }
 
-//        Text("Categorias")
-//        Button(onClick = {
-//            navController.navigate(route = Router.SegundaVista.route)
-//        }) {
-//            Text("Categoria 1")
-//        }
-//        Spacer(modifier = Modifier.width(16.dp))
-
-
-
-
-
-
 @Composable
-fun Main(name: String, modifier: Modifier = Modifier, navController: NavController) {
+fun Main(modifier: Modifier = Modifier, navController: NavController,screenWidth: androidx.compose.ui.unit.Dp, screenHeight: androidx.compose.ui.unit.Dp) {
     val categories = Controlador().obtenerCategorias();
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Text(
             text = "Categorias",
-            fontSize = 20.sp,
+            fontSize = (screenWidth.value * 0.05f).sp,
+            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
             color = Color.Black,
             modifier = Modifier.padding(bottom = 16.dp)
         )
-        CategoryList(navController)
+        CategoryList(navController,screenWidth,screenHeight)
     }
 }
 
 @Composable
-fun CategoryList(navController: NavController) {
+fun CategoryList(navController: NavController,screenWidth: androidx.compose.ui.unit.Dp,screenHeight: androidx.compose.ui.unit.Dp) {
     val categories = Controlador().obtenerCategorias();
-    LazyColumn(modifier = Modifier.fillMaxSize()) {
+    LazyColumn(modifier = Modifier.fillMaxSize().padding(horizontal = screenWidth * 0.05f)) {
         items(categories) { category ->
-            CategoryItem(category, navController)
+            CategoryItem(category, navController,screenWidth)
         }
     }
 }
 
 @Composable
-fun CategoryItem(categoria: Categoria, navController: NavController) {
+fun CategoryItem(categoria: Categoria, navController: NavController,screenWidth: androidx.compose.ui.unit.Dp) {
     val NombreCategotia = stringResource(id = categoria.nombre)
     Card(
         shape = RoundedCornerShape(12.dp),
@@ -122,17 +120,22 @@ fun CategoryItem(categoria: Categoria, navController: NavController) {
             .clickable { navController.navigate("${Router.SegundaVista.route}/${NombreCategotia}") },
         colors = CardDefaults.cardColors(containerColor = Color(0xFFF5F5F5))
     ) {
-        Row(modifier = Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             Image(
                 painter = painterResource(id = categoria.imagen),
                 contentDescription = "Category Image",
-                modifier = Modifier.size(50.dp),
+                modifier = Modifier.size(screenWidth * 0.15f),
                 contentScale = ContentScale.Crop
             )
-            Spacer(modifier = Modifier.width(16.dp))
+            Spacer(modifier = Modifier.width(screenWidth * 0.05f))
             Text(
                 text = NombreCategotia,
-                fontSize = 18.sp,
+                fontSize = (screenWidth.value * 0.04f).sp,
                 color = Color.Black
             )
         }
