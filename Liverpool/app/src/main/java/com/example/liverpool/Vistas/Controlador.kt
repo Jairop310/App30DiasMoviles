@@ -24,14 +24,14 @@ class Controlador : ViewModel()
              Recomendacion(R.string.clayton_square_shopping_centre,R.string.zxcxzcz, R.drawable.clayton_square),
             Recomendacion(R.string.st_johns_shopping_centre, R.string.mmmmmmm, R.drawable.st_johns_shopping),
             Recomendacion(R.string.cavern_walks, R.string.ppppp, R.drawable.cavern_walks)
+            )),
+            Categoria(R.string.restaurantes,R.drawable._7149852163198, listOf(
+                Recomendacion(R.string.bundobust, R.string.ddddd, R.drawable.boundboust),
+                Recomendacion(R.string.madre, R.string.cccv, R.drawable.madre),
+                Recomendacion(R.string.the_art_school_restaurant, R.string.mmmm, R.drawable.the_art_school_restaurant),
+                Recomendacion(R.string.mowgli_street_food, R.string.nnnn, R.drawable.mowgli_street_food),
+                Recomendacion(R.string.the_london_carriage_works, R.string.kkk, R.drawable.the_london_carriage_works)
             ))
-//            Categoria("Restaurantes", listOf(
-//                Recomendacion("Bundobust", "Restaurante que fusiona la comida callejera india con una excelente selección de cervezas artesanales.", "https://bundobust.com/liverpool"),
-//                Recomendacion("Madre", "Ofrece auténtica cocina mexicana en un ambiente vibrante en el Albert Dock.", "https://thisismadre.co.uk/"),
-//                Recomendacion("The Art School Restaurant", "Restaurante de alta cocina que destaca por su menú innovador y elegante ambiente.", "https://theartschoolrestaurant.co.uk/"),
-//                Recomendacion("Mowgli Street Food", "Conocido por su auténtica comida callejera india y ambiente acogedor.", "https://www.mowglistreetfood.com/"),
-//                Recomendacion("The London Carriage Works", "Restaurante galardonado que ofrece cocina británica moderna con ingredientes locales.", "https://www.thelondoncarriageworks.co.uk/")
-//            )),
 //            Categoria("Lugares Emblemáticos", listOf(
 //                Recomendacion("The Beatles Story", "Museo dedicado a la historia de The Beatles, una visita obligada para los fanáticos de la música.", "https://www.beatlesstory.com/"),
 //                Recomendacion("Royal Albert Dock", "Histórico muelle que alberga tiendas, restaurantes y museos, incluyendo el Tate Liverpool.", "https://www.albertdock.com/"),
