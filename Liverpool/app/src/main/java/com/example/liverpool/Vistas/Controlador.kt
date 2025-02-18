@@ -17,14 +17,14 @@ class Controlador : ViewModel()
                 Recomendacion(R.string.bold_street_coffee, R.string.a1, R.drawable.boldstreet),
                 Recomendacion(R.string.rococo_coffee_house, R.string.vsdv, R.drawable.rococo),
                 Recomendacion(R.string._92_degrees_coffee, R.string.dfsdfdsfsd, R.drawable._2_degrees)
+            )),
+            Categoria(R.string.centros_comerciales,R.drawable.islazul_interior, listOf(
+            Recomendacion(R.string.asdsa, R.string.qwewqwq, R.drawable.liverpool_one),
+            Recomendacion(R.string.metquarter_liverpool, R.string.a123, R.drawable.metquarter),
+             Recomendacion(R.string.clayton_square_shopping_centre,R.string.zxcxzcz, R.drawable.clayton_square),
+            Recomendacion(R.string.st_johns_shopping_centre, R.string.mmmmmmm, R.drawable.st_johns_shopping),
+            Recomendacion(R.string.cavern_walks, R.string.ppppp, R.drawable.cavern_walks)
             ))
-//            Categoria("Centros Comerciales", listOf(
-//                Recomendacion("Liverpool ONE", "Extenso complejo comercial con más de 170 tiendas, restaurantes y opciones de entretenimiento.", "https://www.liverpool-one.com/"),
-//                Recomendacion("Metquarter Liverpool", "Centro comercial elegante que alberga boutiques de lujo y opciones gastronómicas.", "https://metquarter.com/"),
-//                Recomendacion("Clayton Square Shopping Centre", "Centro comercial céntrico con una variedad de tiendas minoristas y servicios.", "https://claytonsquare.co.uk/"),
-//                Recomendacion("St Johns Shopping Centre", "Ofrece una amplia gama de tiendas y es conocido por su mercado interior.", "https://stjohns-shopping.co.uk/"),
-//                Recomendacion("Cavern Walks", "Centro comercial boutique que cuenta con tiendas de diseñadores locales y nacionales.", "https://www.cavernwalks.co.uk/")
-//            )),
 //            Categoria("Restaurantes", listOf(
 //                Recomendacion("Bundobust", "Restaurante que fusiona la comida callejera india con una excelente selección de cervezas artesanales.", "https://bundobust.com/liverpool"),
 //                Recomendacion("Madre", "Ofrece auténtica cocina mexicana en un ambiente vibrante en el Albert Dock.", "https://thisismadre.co.uk/"),
