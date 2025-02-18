@@ -18,12 +18,11 @@ class Controlador : ViewModel()
                 Recomendacion(R.string.rococo_coffee_house, R.string.vsdv, R.drawable.rococo),
                 Recomendacion(R.string._92_degrees_coffee, R.string.dfsdfdsfsd, R.drawable._2_degrees)
             )),
-            Categoria(R.string.centros_comerciales,R.drawable.islazul_interior, listOf(
-            Recomendacion(R.string.asdsa, R.string.qwewqwq, R.drawable.liverpool_one),
-            Recomendacion(R.string.metquarter_liverpool, R.string.a123, R.drawable.metquarter),
-             Recomendacion(R.string.clayton_square_shopping_centre,R.string.zxcxzcz, R.drawable.clayton_square),
-            Recomendacion(R.string.st_johns_shopping_centre, R.string.mmmmmmm, R.drawable.st_johns_shopping),
-            Recomendacion(R.string.cavern_walks, R.string.ppppp, R.drawable.cavern_walks)
+                Categoria(R.string.centros_comerciales,R.drawable.islazul_interior, listOf(
+                Recomendacion(R.string.asdsa, R.string.qwewqwq, R.drawable.liverpool_one),
+                Recomendacion(R.string.metquarter_liverpool, R.string.a123, R.drawable.metquarter), Recomendacion(R.string.clayton_square_shopping_centre,R.string.zxcxzcz, R.drawable.clayton_square),
+                Recomendacion(R.string.st_johns_shopping_centre, R.string.mmmmmmm, R.drawable.st_johns_shopping),
+                Recomendacion(R.string.cavern_walks, R.string.ppppp, R.drawable.cavern_walks)
             )),
             Categoria(R.string.restaurantes,R.drawable._7149852163198, listOf(
                 Recomendacion(R.string.bundobust, R.string.ddddd, R.drawable.boundboust),
@@ -43,13 +42,7 @@ class Controlador : ViewModel()
 //                Recomendacion("Anfield Stadium", "Estadio icónico y hogar del Liverpool FC, conocido por su apasionada afición y rica historia en el fútbol.", "a"),
 //                Recomendacion("Liverpool Tennis Centre", "Parte del Wavertree Sports Park, cuenta con seis pistas de tenis cubiertas y seis al aire libre, y ha sido sede de importantes torneos.", "a"),
 //                Recomendacion("Royal Liverpool Golf Club", "Uno de los clubes de golf más antiguos de Inglaterra, ha sido sede del Open Championship en numerosas ocasiones.", "a")
-//            )),
-//            Categoria("Playas", listOf(
-//                Recomendacion("Formby Beach", "Playa de arena dorada rodeada de dunas y bosques de pinos, ideal para caminatas y avistamiento de vida silvestre.", "a"),
-//                Recomendacion("Crosby Beach", "Famosa por la instalación artística 'Another Place' de Antony Gormley, que presenta 100 figuras de hierro a lo largo de la costa.", "a"),
-//                Recomendacion("West Kirby Beach", "Playa popular para deportes acuáticos como el windsurf y ofrece vistas panorámicas del estuario de Dee.", "a"),
-//                Recomendacion("New Brighton Beach", "Playa familiar con un paseo marítimo vibrante, atracciones y vistas al estuario del Mersey.", "a")
-//            )),
+//            ))
         )
 
     fun obtenerCategorias(): List<Categoria> {
